@@ -34,7 +34,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2 text-stone-900 text-xl">Global Reach, Local Expertise</h3>
-                  <p className="text-stone-600">Part of Travel International network, offering insider access to Kenya's finest experiences with worldwide connections</p>
+                  <p className="text-stone-600">Part of Travel International network, offering insider access to Kenya&apos;s finest experiences with worldwide connections</p>
                 </div>
               </motion.div>
 

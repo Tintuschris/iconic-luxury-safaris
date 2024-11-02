@@ -29,7 +29,7 @@ export default function HeroSection() {
               Where Luxury Meets Adventure
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
-              Experience East Africa's finest luxury safaris with personalized itineraries and exclusive accommodations
+              Experience East Africa&apos;s finest luxury safaris with personalized itineraries and exclusive accommodations
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.button
