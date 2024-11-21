@@ -1,7 +1,50 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { useState } from 'react';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'contact',
+          data: formData
+        }),
+      });
+
+      if (response.ok) {
+        // Clear form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section className="py-20 bg-[#0A0A0A] text-white">
       <div className="container mx-auto px-6">
@@ -11,11 +54,13 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6">Start Planning Your Journey</h2>
-            <p className="text-gray-400 mb-8 text-lg">
-              Let our luxury travel experts craft your perfect East African adventure.
+            <h2 className="text-4xl font-baskerville mb-6">
+              Start Planning Your Journey
+            </h2>
+            <p className="font-gerlomi text-gray-400 mb-8 text-lg">
+              Let our luxury travel experts craft your perfect East African adventure
             </p>
-            <div className="space-y-6">
+            <div className="space-y-6 font-baskerville">
               <motion.div 
                 className="flex items-center group cursor-pointer"
                 whileHover={{ x: 10 }}
@@ -56,7 +101,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 font-gerlomi">
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div
                   whileHover={{ y: -5 }}
@@ -64,6 +109,9 @@ export default function ContactSection() {
                 >
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     placeholder="First Name"
                     className="w-full px-4 py-3 bg-white/5 border border-gray-700 text-white focus:border-[#C6A870] transition-colors outline-none"
                   />
@@ -74,6 +122,9 @@ export default function ContactSection() {
                 >
                   <input
                     type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     placeholder="Last Name"
                     className="w-full px-4 py-3 bg-white/5 border border-gray-700 text-white focus:border-[#C6A870] transition-colors outline-none"
                   />
@@ -86,6 +137,9 @@ export default function ContactSection() {
               >
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email Address"
                   className="w-full px-4 py-3 bg-white/5 border border-gray-700 text-white focus:border-[#C6A870] transition-colors outline-none"
                 />
@@ -96,6 +150,9 @@ export default function ContactSection() {
                 transition={{ duration: 0.3 }}
               >
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell us about your dream safari"
                   rows="4"
                   className="w-full px-4 py-3 bg-white/5 border border-gray-700 text-white focus:border-[#C6A870] transition-colors outline-none resize-none"
@@ -103,6 +160,7 @@ export default function ContactSection() {
               </motion.div>
 
               <motion.button
+                type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-[#C6A870] text-white py-4 hover:bg-[#C6A870]/90 transition-colors flex items-center justify-center group"

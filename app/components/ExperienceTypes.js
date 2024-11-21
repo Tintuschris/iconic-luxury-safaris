@@ -61,15 +61,20 @@ const experiences = [
 export default function ExperienceTypes({ setActiveTab }) {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+      <div id="experiences" className="container mx-auto px-6">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "100px 0px" }}
+           transition={{ 
+             type: "tween",
+             duration: 0.4,
+             ease: "easeOut"
+           }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 text-[#0A0A0A]">Curated Experiences</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-baskerville mb-4 text-[#0A0A0A]">Curated Experiences</h2>
+          <p className="font-gerlomi text-gray-600 max-w-2xl mx-auto">
             From exclusive game drives to romantic getaways, we craft unforgettable journeys tailored to your preferences
           </p>
         </motion.div>
@@ -79,10 +84,14 @@ export default function ExperienceTypes({ setActiveTab }) {
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "100px 0px" }}
+              transition={{ 
+                type: "tween",
+                duration: 0.4,
+                ease: "easeOut"
+              }}
               whileHover={{ y: -10 }}
-              className="bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              className="bg-white font-gerlomi p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
             >
               <div className="relative mb-8 overflow-hidden">
                 <motion.img
@@ -138,7 +147,7 @@ export default function ExperienceTypes({ setActiveTab }) {
                     : "luxury"
                   setActiveTab(tabValue)
                 }}
-                className="mt-6 w-full bg-[#0A0A0A] text-white px-6 py-3 hover:bg-[#C6A870] 
+                className=" font-baskerville mt-6 w-full bg-[#0A0A0A] text-white px-6 py-3 hover:bg-[#C6A870] 
                 transition-colors duration-300 flex items-center justify-center group"
               >
                 Learn More 

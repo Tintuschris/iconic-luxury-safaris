@@ -1,17 +1,22 @@
 import { useEffect, useRef } from 'react';
 
-export const useScrollAnimation = (callback) => {
+export const useScrollAnimation = (callback, options = {}) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          callback();
-          observer.disconnect();
-        }
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => callback());
+          }
+        });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '100px 0px',
+        ...options
+      }
     );
 
     if (elementRef.current) {
@@ -19,7 +24,7 @@ export const useScrollAnimation = (callback) => {
     }
 
     return () => observer.disconnect();
-  }, [callback]);
+  }, [callback, options]);
 
   return elementRef;
 };

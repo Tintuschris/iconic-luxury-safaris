@@ -73,10 +73,10 @@ export default function StatsSection() {
             >
               <div className="absolute inset-0 border border-[#C6A870]/20 group-hover:border-[#C6A870] transition-colors duration-300" />
               <div className="relative p-8">
-                <div className="text-[#C6A870] mb-2">
+                <div className="text-[#C6A870] font-baskerville mb-2">
                   <CountingNumber value={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-[#F5F5F5] text-sm uppercase tracking-wider">
+                <div className="text-[#F5F5F5] font-gerlomi text-sm uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>

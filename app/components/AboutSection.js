@@ -3,7 +3,7 @@ import { Globe, Compass, Shield } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-[#F5F5F5]">
+    <section id="about" className="py-20 bg-[#F5F5F5]">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -11,13 +11,15 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-stone-900">Where Luxury Meets Adventure</h2>
-            <p className="text-stone-600 mb-8 text-lg">
+            <h2 className="text-4xl font-baskerville mb-6 text-stone-900">
+              Where Luxury Meets Adventure
+            </h2>
+            <p className="font-gerlomi text-stone-600 mb-8 text-lg">
               At Iconic Luxury Safaris, we curate high-end, personalized travel experiences for discerning adventurers. 
               From wildlife safaris and mountain expeditions to honeymoon retreats and eco-tourism, we transform your 
               journey into an extraordinary story of luxury and discovery.
             </p>
-            <div className="space-y-8">
+            <div className="space-y-8 font-gerlomi">
               <motion.div 
                 className="flex items-start group"
                 whileHover={{ x: 10 }}
@@ -33,7 +35,7 @@ export default function AboutSection() {
                   </motion.div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2 text-stone-900 text-xl">Global Reach, Local Expertise</h3>
+                  <h3 className=" font-baskerville font-semibold mb-2 text-stone-900 text-xl">Global Reach, Local Expertise</h3>
                   <p className="text-stone-600">Part of Travel International network, offering insider access to Kenya&apos;s finest experiences with worldwide connections</p>
                 </div>
               </motion.div>
@@ -53,7 +55,7 @@ export default function AboutSection() {
                   </motion.div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2 text-stone-900 text-xl">Bespoke Experiences</h3>
+                  <h3 className="font-baskerville font-semibold mb-2 text-stone-900 text-xl">Bespoke Experiences</h3>
                   <p className="text-stone-600">From private safaris and balloon adventures to eco-tourism and honeymoon retreats in exotic locations</p>
                 </div>
               </motion.div>
@@ -73,7 +75,7 @@ export default function AboutSection() {
                   </motion.div>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2 text-stone-900 text-xl">Conservation & Luxury</h3>
+                  <h3 className="font-baskerville font-semibold mb-2 text-stone-900 text-xl">Conservation & Luxury</h3>
                   <p className="text-stone-600">Committed to wildlife conservation while delivering unparalleled luxury experiences across East Africa</p>
                 </div>
               </motion.div>
@@ -100,8 +102,8 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ y: -5 }}
             >
-              <div className="text-[#C6A870] font-bold text-xl mb-2">Certified Excellence</div>
-              <div className="text-stone-600">Ministry of Tourism Regulated & TOSK Certified</div>
+              <div className="font-baskerville text-[#C6A870] font-bold text-xl mb-2">Certified Excellence</div>
+              <div className=" font-baskerville text-stone-600">Ministry of Tourism Regulated & TOSK Certified</div>
             </motion.div>
           </motion.div>
         </div>

@@ -65,7 +65,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section id="services-section" className="py-20 bg-[#F5F5F5]">
+    <section id="services" className="py-20 bg-[#F5F5F5]">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -73,8 +73,8 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 text-[#0A0A0A]">Our Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-baskerville font-bold mb-4 text-[#0A0A0A]">Our Services</h2>
+          <p className="font-gerlomi text-gray-600 max-w-2xl mx-auto">
             Discover our range of premium services designed to create unforgettable experiences
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`
-                px-8 py-3 text-sm font-medium transition-all duration-300
+                px-8 py-3 text-sm font-gerlomi font-medium transition-all duration-300
                 ${activeTab === tab 
                   ? 'bg-[#C6A870] text-white shadow-lg' 
                   : 'bg-white text-[#0A0A0A] hover:bg-[#C6A870]/10'}
@@ -126,7 +126,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="absolute top-4 right-4 bg-[#C6A870] text-white px-4 py-2"
+                  className=" font-gerlomi absolute top-4 right-4 bg-[#C6A870] text-white px-4 py-2"
                 >
                   Featured Experience
                 </motion.div>
@@ -135,7 +135,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
                 className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4"
                 animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
               >
-                <p className="text-[#C6A870] font-bold">{tabContent[activeTab].price}</p>
+                <p className="font-gerlomi text-[#C6A870] font-bold">{tabContent[activeTab].price}</p>
               </motion.div>
             </motion.div>
 
@@ -145,10 +145,10 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h3 className="text-3xl font-bold mb-4 text-[#0A0A0A]">
+              <h3 className=" font-gerlomi text-3xl font-bold mb-4 text-[#0A0A0A]">
                 {tabContent[activeTab].title}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="font-baskerville text-gray-600 mb-6">
                 {tabContent[activeTab].description}
               </p>
               <motion.ul className="space-y-4">
@@ -158,7 +158,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-center text-gray-700"
+                    className="font-gerlomi flex items-center text-gray-700"
                   >
                     <ChevronRight className="w-5 h-5 text-[#C6A870] mr-2" />
                     {feature}
@@ -168,7 +168,7 @@ export default function ServicesTabs({ activeTab, setActiveTab }) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-8 bg-[#C6A870] text-white px-8 py-3 hover:bg-[#C6A870]/90 transition-colors"
+                className=" font-gerlomi mt-8 bg-[#C6A870] text-white px-8 py-3 hover:bg-[#C6A870]/90 transition-colors"
               >
                 Book This Experience
               </motion.button>

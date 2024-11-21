@@ -1,16 +1,15 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local'
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const baskervilleOldFace = localFont({
+  src: './fonts/baskerville-old-face.ttf',
+  variable: '--font-baskerville'
+})
+
+const gerlomi = localFont({
+  src: './fonts/Gerlomi.ttf',
+  variable: '--font-gerlomi'
+})
 
 export const metadata = {
   title: "ICONIC  LUXURY SAFARIS",
@@ -20,9 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${baskervilleOldFace.variable} ${gerlomi.variable}`}>
         {children}
       </body>
     </html>
